@@ -1,27 +1,24 @@
 import { useState } from "react";
 import "./App.css";
-import Button from "./components/Button";
-import Test from "./components/Test";
-import Welcome from "./components/Welcome";
+import React from "react";
 
 function App() {
-  const [name,setName] = useState('Gül')
-  const [age, setAge] = useState(25)
+  const [count, setCount] = useState(0);
 
-  const handleClick = () => {
-    setName('Betül')
-    setAge(27)
-  }
-
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decerement = () => {
+    setCount(count - 1);
+  };
   return (
     <div>
-    <p>{name} is {age} years old</p>
-
-    <button onClick={handleClick}>Click on me</button>
+      <h1>Welcome to my counter app</h1>
+      <p>The count is: {count}</p>
+      <button onClick={decerement}>-</button>
+      <button onClick={increment}>+</button>
     </div>
-
-  
-  )
+  );
 }
 
 export default App;
