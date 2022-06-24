@@ -1,66 +1,28 @@
-import React, { useState } from "react";
-import { Button, TextField } from "@mui/material";
+import Content from "./components/Content";
+import React from "react";
+import ClickEvent from "./components/ClickEvent";
 
 function App() {
-  const [userName, setUserName] = useState("ılkDeger");
-  const [password, setPassword] = useState("");
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  const [error, setError] = useState(false);
-
-  const handleUserNameChange = (e) => {
-    setUserName(e.target.value);
+  /*const handleClick = (e) => {
+    console.log("hello,ninjas", e);
   };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handleClickAgain = (name) => {
+    console.log("hello" + name);
   };
-
-  const handleLoginClick = () => {
-    if (userName && password) {
-      console.log(`Welcome, ${userName} ${password}`);
-      setIsUserLoggedIn(true);
-    } else {
-      setError(true);
-    }
-  };
-
-  // render
+*/
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          flex: 1,
-          marginTop: 48,
+    <ClickEvent />
+    /*<div>
+      <h2>Homepage</h2>
+      <button onClick={handleClick()}>Click me</button>
+      <button
+        onClick={(e) => {
+          handleClickAgain("mario", e);
         }}
       >
-        <TextField
-          id="outlined-basic"
-          label="User Name"
-          variant="outlined"
-          onChange={handleUserNameChange}
-        />
-        <TextField
-          id="outlined-basic"
-          label="Password"
-          variant="outlined"
-          onChange={handlePasswordChange}
-        />
-        <Button onClick={handleLoginClick} variant="contained">
-          Login
-        </Button>
-        {isUserLoggedIn && "You are logged ın"}
-      </div>
-      {isUserLoggedIn && `Welcome, ${userName}`}
-    </div>
+        Click me again
+      </button>
+    </div>*/
   );
 }
 
