@@ -1,29 +1,19 @@
-import Content from "./components/Content";
-import React from "react";
-import ClickEvent from "./components/ClickEvent";
 
-function App() {
-  /*const handleClick = (e) => {
-    console.log("hello,ninjas", e);
-  };
-  const handleClickAgain = (name) => {
-    console.log("hello" + name);
-  };
-*/
-  return (
-    <ClickEvent />
-    /*<div>
-      <h2>Homepage</h2>
-      <button onClick={handleClick()}>Click me</button>
-      <button
-        onClick={(e) => {
-          handleClickAgain("mario", e);
-        }}
-      >
-        Click me again
-      </button>
-    </div>*/
-  );
+import React,{useState,useEffect} from "react";
+
+function App(){
+  const [count, setCount] = useState(0);
+
+  useEffect(() =>{
+    document.title = `Button ${count} times clicked`;
+  }
+  )
+  return(
+    <div>
+      <p>Button {count} times clicked</p>
+      <button onClick ={() =>setCount(count+1)}>Click</button>
+      
+    </div>
+  )
 }
-
 export default App;
