@@ -1,19 +1,27 @@
+import React, { useState, useEffect } from "react";
 
-import React,{useState,useEffect} from "react";
-
-function App(){
+function App() {
   const [count, setCount] = useState(0);
+  const [button, setButton] = useState("User");
+
+  useEffect(() => {
+    console.log(`Basılan button ${button}`);
+  },[button]);
 
   useEffect(() =>{
-    document.title = `Button ${count} times clicked`;
-  }
-  )
-  return(
+    console.log(count)
+  },[count])
+  return (
     <div>
-      <p>Button {count} times clicked</p>
-      <button onClick ={() =>setCount(count+1)}>Click</button>
-      
+      <div>
+        <button onClick={() => setButton("User")}>User</button>
+        <button onClick={() => setButton("Comments")}>Comments</button>
+        <button onClick={() => setButton("Posts")}>Posts</button>
+        <h1>{button}</h1>
+      </div>
+      <button onClick={()=>setCount(count+1)}>Count</button>
+      <h1></h1>
     </div>
-  )
+  );
 }
 export default App;
